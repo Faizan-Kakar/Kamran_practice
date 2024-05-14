@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Javascript</title>
+</head>
+<body>
+    <h1>Hello Everyone how are you fine feeling well hopefully you are fine</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, a totam. Dolores quasi est maxime saepe neque exercitationem. Nisi, libero? Debitis perferendis expedita amet. Illum itaque soluta debitis possimus ad.</p>
+
+    <script type="module" >
+       
+    async   function getWeather() {
+        return new Promise((resolve, reject)=>{
+            try{
+
+                fetch('https://jsonplaceholder.typicode.com/todos/1')
+                  .then ( (response)=>{resolve(response); console.log("THe data is fetching");});
+                 console.log("second");
+            }
+            catch (error){
+                   reject(error);
+            }     
+        })
+       }
+
+       getWeather()
+       .then((response)=>{
+        console.log('THe data is successfully get ' + response.json());
+       })
+       .catch((error)=>{
+        console.log("Error is found" + error);
+       })
+
+    </script>
+</body>
+</html>
